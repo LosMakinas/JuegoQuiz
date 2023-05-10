@@ -1,0 +1,11 @@
+C:\Users\Almi\Source\Repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.csproj.AssemblyReference.cache
+C:\Users\Almi\Source\Repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.csproj.SuggestedBindingRedirects.cache
+C:\Users\Almi\Source\Repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.Form1.resources
+C:\Users\Almi\Source\Repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.csproj.GenerateResource.cache
+C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\JuegoQuizzReto.exe.config
+C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\JuegoQuizzReto.exe
+C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\JuegoQuizzReto.pdb
+C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.Properties.Resources.resources
+C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.csproj.CoreCompileInputs.cache
+C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.exe
+C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Bcpg.OpenPgp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace JuegoQuizzReto {
         private Usuario usuario;
         private InicioSesion inicioSesion;
         private JugarPartida jugarPartida;
+        private NumPreguntas numPreguntas;
 
         public MenuPrincipal(Usuario usuario, InicioSesion sesion) {
             InitializeComponent();
@@ -53,8 +55,8 @@ namespace JuegoQuizzReto {
         }
 
         private void btnJugar_Click(object sender, EventArgs e) {
-            jugarPartida = new JugarPartida(this);
-            jugarPartida.Show(this);
+            numPreguntas = new NumPreguntas(this, usuario);
+            numPreguntas.Visible = true;
             this.Hide();
         }
 

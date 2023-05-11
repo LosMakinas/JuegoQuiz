@@ -51,7 +51,7 @@
             this.btnJugar.BackColor = System.Drawing.Color.Transparent;
             this.btnJugar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnJugar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnJugar.ForeColor = System.Drawing.Color.White;
             this.btnJugar.Location = new System.Drawing.Point(170, 248);
             this.btnJugar.Name = "btnJugar";
@@ -68,7 +68,7 @@
             this.btnMarcador.BackColor = System.Drawing.Color.Transparent;
             this.btnMarcador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMarcador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnMarcador.ForeColor = System.Drawing.Color.White;
             this.btnMarcador.Location = new System.Drawing.Point(170, 482);
             this.btnMarcador.Name = "btnMarcador";
@@ -84,7 +84,7 @@
             this.btnDesbloqueables.BackColor = System.Drawing.Color.Transparent;
             this.btnDesbloqueables.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDesbloqueables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloqueables.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesbloqueables.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnDesbloqueables.ForeColor = System.Drawing.Color.White;
             this.btnDesbloqueables.Location = new System.Drawing.Point(170, 364);
             this.btnDesbloqueables.Name = "btnDesbloqueables";

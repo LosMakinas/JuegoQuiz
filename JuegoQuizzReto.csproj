@@ -105,6 +105,13 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="NumPreguntas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumPreguntas.Designer.cs">
+      <DependentUpon>NumPreguntas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pregunta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
@@ -116,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumPreguntas.resx">
+      <DependentUpon>NumPreguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

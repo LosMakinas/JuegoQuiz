@@ -44,7 +44,7 @@
             this.btnIniarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnIniarSesion.Location = new System.Drawing.Point(269, 355);
+            this.btnIniarSesion.Location = new System.Drawing.Point(218, 352);
             this.btnIniarSesion.Name = "btnIniarSesion";
             this.btnIniarSesion.Size = new System.Drawing.Size(156, 43);
             this.btnIniarSesion.TabIndex = 1;
@@ -110,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
-            this.ClientSize = new System.Drawing.Size(624, 701);
+            this.ClientSize = new System.Drawing.Size(624, 479);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

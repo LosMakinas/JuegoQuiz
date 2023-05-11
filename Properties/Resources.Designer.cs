@@ -63,6 +63,16 @@ namespace JuegoQuizzReto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cartel {
+            get {
+                object obj = ResourceManager.GetObject("cartel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap corazonFull {
             get {
                 object obj = ResourceManager.GetObject("corazonFull", resourceCulture);
@@ -106,6 +116,16 @@ namespace JuegoQuizzReto.Properties {
         internal static System.Drawing.Bitmap logo_definitivo2 {
             get {
                 object obj = ResourceManager.GetObject("logo-definitivo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minion {
+            get {
+                object obj = ResourceManager.GetObject("minion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

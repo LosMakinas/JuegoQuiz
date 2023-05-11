@@ -39,6 +39,7 @@
             this.lblResp3 = new System.Windows.Forms.Label();
             this.lblResp2 = new System.Windows.Forms.Label();
             this.relojPartida = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoPregunta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPreguntaResp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon1)).BeginInit();
@@ -49,9 +50,9 @@
             // picFotoPregunta
             // 
             this.picFotoPregunta.BackColor = System.Drawing.Color.Transparent;
-            this.picFotoPregunta.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.pr;
+            this.picFotoPregunta.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.cartel;
             this.picFotoPregunta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picFotoPregunta.Location = new System.Drawing.Point(378, 78);
+            this.picFotoPregunta.Location = new System.Drawing.Point(369, -1);
             this.picFotoPregunta.Name = "picFotoPregunta";
             this.picFotoPregunta.Size = new System.Drawing.Size(548, 365);
             this.picFotoPregunta.TabIndex = 2;
@@ -62,9 +63,9 @@
             this.lblNumPregunta.BackColor = System.Drawing.Color.Transparent;
             this.lblNumPregunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumPregunta.ForeColor = System.Drawing.Color.White;
-            this.lblNumPregunta.Location = new System.Drawing.Point(357, 19);
+            this.lblNumPregunta.Location = new System.Drawing.Point(369, 390);
             this.lblNumPregunta.Name = "lblNumPregunta";
-            this.lblNumPregunta.Size = new System.Drawing.Size(540, 56);
+            this.lblNumPregunta.Size = new System.Drawing.Size(548, 56);
             this.lblNumPregunta.TabIndex = 3;
             this.lblNumPregunta.Text = "Pregunta 1";
             this.lblNumPregunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,9 +162,9 @@
             this.lblPuntuacion.BackColor = System.Drawing.Color.Transparent;
             this.lblPuntuacion.Font = new System.Drawing.Font("Source Sans Pro Black", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntuacion.ForeColor = System.Drawing.Color.White;
-            this.lblPuntuacion.Location = new System.Drawing.Point(-1, 113);
+            this.lblPuntuacion.Location = new System.Drawing.Point(0, 113);
             this.lblPuntuacion.Name = "lblPuntuacion";
-            this.lblPuntuacion.Size = new System.Drawing.Size(373, 48);
+            this.lblPuntuacion.Size = new System.Drawing.Size(372, 48);
             this.lblPuntuacion.TabIndex = 9;
             this.lblPuntuacion.Text = "0 Pts";
             // 
@@ -218,12 +219,25 @@
             this.relojPartida.Interval = 1000;
             this.relojPartida.Tick += new System.EventHandler(this.relojPartida_Tick);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(459, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(369, 180);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Espere un momento. La pregunta está cargando...";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // JugarPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
             this.ClientSize = new System.Drawing.Size(1284, 811);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPuntuacion);
             this.Controls.Add(this.lblResp2);
             this.Controls.Add(this.lblResp4);
@@ -266,5 +280,6 @@
         private System.Windows.Forms.Label lblResp3;
         private System.Windows.Forms.Label lblResp2;
         private System.Windows.Forms.Timer relojPartida;
+        private System.Windows.Forms.Label label1;
     }
 }

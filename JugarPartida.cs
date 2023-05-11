@@ -12,11 +12,11 @@ namespace JuegoQuizzReto {
     public partial class JugarPartida : Form {
 
         private MenuPrincipal menuPrincipal;
+        private Usuario usuario;
         private int cont, puntuacion;
-        private Random rPuntuacion;
         private bool tiempoPregunta;
 
-        public JugarPartida(MenuPrincipal menuPrincipal) {
+        public JugarPartida(MenuPrincipal menuPrincipal, Usuario usuario) {
             InitializeComponent();
             this.menuPrincipal = menuPrincipal;
             picPreguntaResp.Visible = false;
@@ -27,8 +27,8 @@ namespace JuegoQuizzReto {
             lblPregunta.Visible = false;
             cont = 10;
             puntuacion = 0;
-            rPuntuacion = new Random();
             tiempoPregunta = false;
+            this.usuario = usuario;
         }
 
         private void relojPartida_Tick(object sender, EventArgs e) {
@@ -40,6 +40,7 @@ namespace JuegoQuizzReto {
                 lblResp3.Visible = true;
                 lblResp4.Visible = true;
                 lblTiempoRest.Visible = true;
+                picFotoPregunta.BackgroundImage = Properties.Resources.logo_definitivo2;
                 cont = 30;
                 tiempoPregunta = true;
             } else if (cont == 0 && tiempoPregunta) {
@@ -123,7 +124,7 @@ namespace JuegoQuizzReto {
         public bool comprobarRespCorrecta(String tag) {
             if (tag == "Verdadera") {
                 relojPartida.Stop();
-                puntuacion += rPuntuacion.Next(100, 501) * cont * 2;/*Aquí iría el nivel de dificultad del 1-3 (El 2 es de ejemplo)*/
+                puntuacion = puntuacion+(100 * cont * 2);/*Aquí iría el nivel de dificultad del 1-3 (El 2 es de ejemplo)*/
                 lblPuntuacion.Text = puntuacion + " Pts";
                 return true;
             }

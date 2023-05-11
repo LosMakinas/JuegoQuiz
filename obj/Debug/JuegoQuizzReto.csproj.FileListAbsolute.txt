@@ -37,3 +37,4 @@ C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\System.Runtime.CompilerServices.U
 C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.csproj.CopyComplete
 C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.JugarPartida.resources
+C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.NumPreguntas.resources

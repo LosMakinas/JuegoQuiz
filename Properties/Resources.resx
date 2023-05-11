@@ -121,4 +121,37 @@
   <data name="Galaxy_repeating" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Galaxy_repeating.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="respuestaA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\respuestaA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="respuestaB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\respuestaB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo-definitivo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-definitivo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pregunta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pregunta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="respuestaC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\respuestaC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corazonVacio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corazonVacio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="respuestaD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\respuestaD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corazonFull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corazonFull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Preguntas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preguntas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo-definitivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-definitivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pr.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

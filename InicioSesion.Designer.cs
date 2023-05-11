@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             this.btnIniarSesion = new System.Windows.Forms.Button();
             this.txtNombreUsu = new System.Windows.Forms.TextBox();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(191, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 45);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PHOTO PLAY";
             // 
             // btnIniarSesion
             // 
             this.btnIniarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.btnIniarSesion.FlatAppearance.BorderSize = 0;
             this.btnIniarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniarSesion.ForeColor = System.Drawing.Color.White;
@@ -104,33 +93,48 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Contraseña:";
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.logo_definitivo2;
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogo.Location = new System.Drawing.Point(175, 12);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(250, 237);
+            this.picLogo.TabIndex = 4;
+            this.picLogo.TabStop = false;
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
-            this.ClientSize = new System.Drawing.Size(623, 699);
+            this.ClientSize = new System.Drawing.Size(624, 701);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtNombreUsu);
             this.Controls.Add(this.btnIniarSesion);
-            this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "InicioSesion";
             this.Text = "InicioSesion";
+            this.Load += new System.EventHandler(this.InicioSesion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnIniarSesion;
         private System.Windows.Forms.TextBox txtNombreUsu;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }
 

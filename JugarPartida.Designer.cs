@@ -1,4 +1,6 @@
-﻿namespace JuegoQuizzReto {
+﻿using System.Windows.Forms;
+
+namespace JuegoQuizzReto {
     partial class JugarPartida {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +41,8 @@
             this.lblResp3 = new System.Windows.Forms.Label();
             this.lblResp2 = new System.Windows.Forms.Label();
             this.relojPartida = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSigPregunta = new System.Windows.Forms.Label();
+            this.relojEsperarSigPregunta = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picFotoPregunta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPreguntaResp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon1)).BeginInit();
@@ -50,11 +53,12 @@
             // picFotoPregunta
             // 
             this.picFotoPregunta.BackColor = System.Drawing.Color.Transparent;
-            this.picFotoPregunta.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.cartel;
             this.picFotoPregunta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picFotoPregunta.ImageLocation = "";
             this.picFotoPregunta.Location = new System.Drawing.Point(369, -1);
             this.picFotoPregunta.Name = "picFotoPregunta";
-            this.picFotoPregunta.Size = new System.Drawing.Size(548, 365);
+            this.picFotoPregunta.Size = new System.Drawing.Size(550, 365);
+            this.picFotoPregunta.SizeMode = PictureBoxSizeMode.StretchImage;
             this.picFotoPregunta.TabIndex = 2;
             this.picFotoPregunta.TabStop = false;
             // 
@@ -102,7 +106,6 @@
             this.lblPregunta.Name = "lblPregunta";
             this.lblPregunta.Size = new System.Drawing.Size(581, 118);
             this.lblPregunta.TabIndex = 6;
-            this.lblPregunta.Text = "¿Qué es la prevención de riesgos laborales?";
             this.lblPregunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picCorazon1
@@ -151,9 +154,6 @@
             this.lblResp1.Size = new System.Drawing.Size(414, 67);
             this.lblResp1.TabIndex = 8;
             this.lblResp1.Tag = "Falsa";
-            this.lblResp1.Text = "La prevención de riesgos laborales se refiere a un conjunto de medidas que buscan" +
-    " aumentar la probabilidad de que los trabajadores se vean expuestos a situacione" +
-    "s peligrosas en su lugar de trabajo.";
             this.lblResp1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblResp1.Click += new System.EventHandler(this.lblResp1_Click);
             // 
@@ -164,7 +164,7 @@
             this.lblPuntuacion.ForeColor = System.Drawing.Color.White;
             this.lblPuntuacion.Location = new System.Drawing.Point(0, 113);
             this.lblPuntuacion.Name = "lblPuntuacion";
-            this.lblPuntuacion.Size = new System.Drawing.Size(372, 48);
+            this.lblPuntuacion.Size = new System.Drawing.Size(363, 48);
             this.lblPuntuacion.TabIndex = 9;
             this.lblPuntuacion.Text = "0 Pts";
             // 
@@ -178,9 +178,6 @@
             this.lblResp4.Size = new System.Drawing.Size(408, 67);
             this.lblResp4.TabIndex = 8;
             this.lblResp4.Tag = "Verdadera";
-            this.lblResp4.Text = "La prevención de riesgos laborales se refiere a un proceso para aumentar la proba" +
-    "bilidad de que los trabajadores se vean expuestos a situaciones peligrosas en su" +
-    " lugar de trabajo.";
             this.lblResp4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblResp4.Click += new System.EventHandler(this.lblResp4_Click);
             // 
@@ -194,8 +191,6 @@
             this.lblResp3.Size = new System.Drawing.Size(414, 67);
             this.lblResp3.TabIndex = 8;
             this.lblResp3.Tag = "Falsa";
-            this.lblResp3.Text = "La prevención de riesgos laborales es un conjunto de medidas que se toman para ev" +
-    "itar la ocurrencia de accidentes y enfermedades laborales.";
             this.lblResp3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblResp3.Click += new System.EventHandler(this.lblResp3_Click);
             // 
@@ -209,8 +204,6 @@
             this.lblResp2.Size = new System.Drawing.Size(408, 67);
             this.lblResp2.TabIndex = 8;
             this.lblResp2.Tag = "Falsa";
-            this.lblResp2.Text = "La prevención de riesgos laborales es un proceso que busca garantizar que los tra" +
-    "bajadores tengan un mayor acceso a riesgos en el lugar de trabajo.";
             this.lblResp2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblResp2.Click += new System.EventHandler(this.lblResp2_Click);
             // 
@@ -219,17 +212,23 @@
             this.relojPartida.Interval = 1000;
             this.relojPartida.Tick += new System.EventHandler(this.relojPartida_Tick);
             // 
-            // label1
+            // lblSigPregunta
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(459, 167);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 180);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Espere un momento. La pregunta está cargando...";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSigPregunta.BackColor = System.Drawing.Color.Transparent;
+            this.lblSigPregunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSigPregunta.ForeColor = System.Drawing.Color.White;
+            this.lblSigPregunta.Location = new System.Drawing.Point(459, 167);
+            this.lblSigPregunta.Name = "lblSigPregunta";
+            this.lblSigPregunta.Size = new System.Drawing.Size(369, 180);
+            this.lblSigPregunta.TabIndex = 10;
+            this.lblSigPregunta.Text = "Espere un momento. La pregunta está cargando...";
+            this.lblSigPregunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSigPregunta.Visible = false;
+            // 
+            // relojEsperarSigPregunta
+            // 
+            this.relojEsperarSigPregunta.Interval = 1000;
+            this.relojEsperarSigPregunta.Tick += new System.EventHandler(this.relojEsperarSigPregunta_Tick);
             // 
             // JugarPartida
             // 
@@ -237,7 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
             this.ClientSize = new System.Drawing.Size(1284, 811);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSigPregunta);
             this.Controls.Add(this.lblPuntuacion);
             this.Controls.Add(this.lblResp2);
             this.Controls.Add(this.lblResp4);
@@ -253,6 +252,7 @@
             this.Controls.Add(this.picPreguntaResp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "JugarPartida";
+            this.Tag = "º";
             this.Text = "Partida";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.JugarPartida_FormClosing);
             this.Load += new System.EventHandler(this.JugarPartida_Load);
@@ -280,6 +280,7 @@
         private System.Windows.Forms.Label lblResp3;
         private System.Windows.Forms.Label lblResp2;
         private System.Windows.Forms.Timer relojPartida;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSigPregunta;
+        private System.Windows.Forms.Timer relojEsperarSigPregunta;
     }
 }

@@ -166,13 +166,13 @@
             this.rbIngles.Name = "rbIngles";
             this.rbIngles.Size = new System.Drawing.Size(95, 17);
             this.rbIngles.TabIndex = 1;
-            this.rbIngles.TabStop = true;
             this.rbIngles.Text = "Inglés Técnico";
             this.rbIngles.UseVisualStyleBackColor = true;
             // 
             // rbFol
             // 
             this.rbFol.AutoSize = true;
+            this.rbFol.Checked = true;
             this.rbFol.ForeColor = System.Drawing.Color.White;
             this.rbFol.Location = new System.Drawing.Point(6, 30);
             this.rbFol.Name = "rbFol";

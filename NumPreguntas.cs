@@ -13,6 +13,7 @@ namespace JuegoQuizzReto {
 
         private MenuPrincipal menu;
         private Usuario usuario;
+        private JugarPartida jugarPartida;
 
         public NumPreguntas(MenuPrincipal menu, Usuario usuario) {
             InitializeComponent();
@@ -21,7 +22,9 @@ namespace JuegoQuizzReto {
         }
 
         private void crearPartida(object sender, EventArgs e) {
-
+            jugarPartida = new JugarPartida(menu, usuario, Convert.ToInt32(((Button)sender).Text.ToString()));
+            this.Hide();
+            jugarPartida.Show();
         }
     }
 }

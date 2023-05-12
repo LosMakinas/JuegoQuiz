@@ -38,3 +38,5 @@ C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\System.Threading.Tasks.Extensions
 C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.csproj.CopyComplete
 C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.JugarPartida.resources
 C:\Users\Almi\source\repos\JuegoQuiz\obj\Debug\JuegoQuizzReto.NumPreguntas.resources
+C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Almi\source\repos\JuegoQuiz\bin\Debug\Newtonsoft.Json.xml

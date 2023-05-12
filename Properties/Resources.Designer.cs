@@ -93,6 +93,16 @@ namespace JuegoQuizzReto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap distancia {
+            get {
+                object obj = ResourceManager.GetObject("distancia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Galaxy_repeating {
             get {
                 object obj = ResourceManager.GetObject("Galaxy_repeating", resourceCulture);

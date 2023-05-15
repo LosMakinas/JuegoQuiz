@@ -43,6 +43,7 @@ namespace JuegoQuizzReto {
             this.relojPartida = new System.Windows.Forms.Timer(this.components);
             this.lblSigPregunta = new System.Windows.Forms.Label();
             this.relojEsperarSigPregunta = new System.Windows.Forms.Timer(this.components);
+            this.lblExplicacionRespCorrecta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoPregunta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPreguntaResp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon1)).BeginInit();
@@ -58,7 +59,7 @@ namespace JuegoQuizzReto {
             this.picFotoPregunta.Location = new System.Drawing.Point(369, -1);
             this.picFotoPregunta.Name = "picFotoPregunta";
             this.picFotoPregunta.Size = new System.Drawing.Size(550, 365);
-            this.picFotoPregunta.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.picFotoPregunta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFotoPregunta.TabIndex = 2;
             this.picFotoPregunta.TabStop = false;
             // 
@@ -230,12 +231,24 @@ namespace JuegoQuizzReto {
             this.relojEsperarSigPregunta.Interval = 1000;
             this.relojEsperarSigPregunta.Tick += new System.EventHandler(this.relojEsperarSigPregunta_Tick);
             // 
+            // lblExplicacionRespCorrecta
+            // 
+            this.lblExplicacionRespCorrecta.BackColor = System.Drawing.Color.Transparent;
+            this.lblExplicacionRespCorrecta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExplicacionRespCorrecta.ForeColor = System.Drawing.Color.White;
+            this.lblExplicacionRespCorrecta.Location = new System.Drawing.Point(918, 84);
+            this.lblExplicacionRespCorrecta.Name = "lblExplicacionRespCorrecta";
+            this.lblExplicacionRespCorrecta.Size = new System.Drawing.Size(365, 362);
+            this.lblExplicacionRespCorrecta.TabIndex = 11;
+            this.lblExplicacionRespCorrecta.Text = "Explicación:";
+            // 
             // JugarPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
             this.ClientSize = new System.Drawing.Size(1284, 811);
+            this.Controls.Add(this.lblExplicacionRespCorrecta);
             this.Controls.Add(this.lblSigPregunta);
             this.Controls.Add(this.lblPuntuacion);
             this.Controls.Add(this.lblResp2);
@@ -282,5 +295,6 @@ namespace JuegoQuizzReto {
         private System.Windows.Forms.Timer relojPartida;
         private System.Windows.Forms.Label lblSigPregunta;
         private System.Windows.Forms.Timer relojEsperarSigPregunta;
+        private Label lblExplicacionRespCorrecta;
     }
 }

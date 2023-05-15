@@ -39,7 +39,7 @@ namespace JuegoQuizzReto {
             tiempoPregunta = false;
             this.usuario = usuario;
             this.numPreguntas = numPreguntas;
-            numPreguntaAct = 0;
+            numPreguntaAct = 1;
             pregunta = new Pregunta();
             todasPreguntas = pregunta.TodasPreguntas;
             r = new Random();
@@ -56,6 +56,7 @@ namespace JuegoQuizzReto {
                 lblResp2.Visible = true;
                 lblResp3.Visible = true;
                 lblResp4.Visible = true;
+                lblNumPregunta.Text = "Pregunta " + numPreguntaAct;
                 lblTiempoRest.Visible = true;
                 picFotoPregunta.Image = Properties.Resources.logo_definitivo2;
                 cont = 30;
@@ -241,8 +242,9 @@ namespace JuegoQuizzReto {
                 lblResp2.ForeColor = DefaultForeColor;
                 lblResp3.ForeColor = DefaultForeColor;
                 lblResp4.ForeColor = DefaultForeColor;
+                numPreguntaAct++;
                 relojEsperarSigPregunta.Stop();
-                relojPartida.Start();                
+                relojPartida.Start();
             }
             contEsperaSigPreg--;
         }
@@ -254,7 +256,7 @@ namespace JuegoQuizzReto {
         public bool comprobarRespCorrecta(String tag) {
             if (tag == "Verdadera") {
                 relojPartida.Stop();
-                puntuacion = puntuacion+(100 * cont * 2);/*Aquí iría el nivel de dificultad del 1-3 (El 2 es de ejemplo)*/
+                puntuacion = puntuacion+(100 * cont * Convert.ToInt32(todasPreguntas["data"][numPreguntasAnt[pos]]["dificultad"].ToString()));
                 lblPuntuacion.Text = puntuacion + " Pts";
                 return true;
             }

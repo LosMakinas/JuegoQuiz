@@ -22,7 +22,11 @@ namespace JuegoQuizzReto {
         }
 
         private void crearPartida(object sender, EventArgs e) {
-            jugarPartida = new JugarPartida(menu, usuario, Convert.ToInt32(((Button)sender).Text.ToString()));
+            if (rbFol.Checked) {
+                jugarPartida = new JugarPartida(menu, "Fol",usuario, Convert.ToInt32(((Button)sender).Text.ToString()));
+            } else if(rbIngles.Checked) {
+                jugarPartida = new JugarPartida(menu, "Ingles", usuario, Convert.ToInt32(((Button)sender).Text.ToString()));
+            }
             this.Hide();
             jugarPartida.Show();
         }

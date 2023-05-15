@@ -25,7 +25,7 @@ namespace JuegoQuizzReto {
         private int contEsperaSigPreg;
         private string urlImagen;
 
-        public JugarPartida(MenuPrincipal menuPrincipal, Usuario usuario, int numPreguntas) {
+        public JugarPartida(MenuPrincipal menuPrincipal, String tematica,Usuario usuario, int numPreguntas) {
             InitializeComponent();
             this.menuPrincipal = menuPrincipal;
             picPreguntaResp.Visible = false;
@@ -41,7 +41,11 @@ namespace JuegoQuizzReto {
             this.numPreguntas = numPreguntas;
             numPreguntaAct = 1;
             pregunta = new Pregunta();
-            todasPreguntas = pregunta.TodasPreguntas;
+            if (tematica == "Ingles") {
+                todasPreguntas = pregunta.TodasPreguntasIngles;
+            } else if (tematica == "Fol") {
+                todasPreguntas = pregunta.TodasPreguntasFol;
+            }
             r = new Random();
             pos = 0;
             numPreguntasAnt = new int[numPreguntas];
@@ -204,6 +208,7 @@ namespace JuegoQuizzReto {
         }
 
         private void JugarPartida_Load(object sender, EventArgs e) {
+
             for(int i = 0; i < 3; i++) {
                 int numero;
                 bool repetido;
@@ -242,6 +247,7 @@ namespace JuegoQuizzReto {
                 lblResp2.ForeColor = DefaultForeColor;
                 lblResp3.ForeColor = DefaultForeColor;
                 lblResp4.ForeColor = DefaultForeColor;
+                lblExplicacionRespCorrecta.Visible = false;
                 numPreguntaAct++;
                 relojEsperarSigPregunta.Stop();
                 relojPartida.Start();

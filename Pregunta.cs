@@ -93,6 +93,13 @@ namespace JuegoQuizzReto {
             set { todasPreguntas = value; }
             get { return todasPreguntas; }
         }
-
+        public Newtonsoft.Json.Linq.JObject TodasPreguntasFol {
+            set { todasPreguntasFol = value; }
+            get { return todasPreguntasFol; }
+        }
+        public Newtonsoft.Json.Linq.JObject TodasPreguntasIngles {
+            set { todasPreguntasIngles = value; }
+            get { return todasPreguntasIngles; }
+        }
     }
 }

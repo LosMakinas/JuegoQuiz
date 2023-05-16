@@ -95,7 +95,7 @@ namespace JuegoQuizzReto {
             lblResp4.Visible = false;
             picPreguntaResp.Visible = false;
             picFotoPregunta.Image = Properties.Resources.cartel;
-            //MessageBox.Show(todasPreguntas["data"][numPreguntasAnt[pos]]["descripcion"].ToString());
+            lblExplicacionRespCorrecta.Text = "Explicación: "+todasPreguntas["data"][numPreguntasAnt[pos]]["descripcion"].ToString();
             pos++;
             lblPregunta.Text = todasPreguntas["data"][numPreguntasAnt[pos]]["pregunta"].ToString();
             lblResp1.Text = todasPreguntas["data"][numPreguntasAnt[pos]]["respuestas"][0]["respuesta1"].ToString();

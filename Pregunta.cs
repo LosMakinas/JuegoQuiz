@@ -11,16 +11,11 @@ using System.Windows.Forms;
 namespace JuegoQuizzReto {
     public class Pregunta {
 
-        private Newtonsoft.Json.Linq.JObject todasPreguntas;
-        private Newtonsoft.Json.Linq.JObject todasPreguntasFol;
-        private Newtonsoft.Json.Linq.JObject todasPreguntasIngles;
 
         public Pregunta() {
-            GetItems();
-            GetPreguntasIngles();
-            GetPreguntasFol();
+            
         }
-        public void GetItems() {
+        /*public void GetItems() {
             var url = $"http://192.168.0.97:8080/api/preguntas";
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
@@ -42,30 +37,32 @@ namespace JuegoQuizzReto {
                 return;
             }
         }
+        */
 
-        public void GetPreguntasIngles() {
-            var url = $"http://192.168.0.97:8080/api/preguntasIngles";
+        public Newtonsoft.Json.Linq.JObject GetPreguntas(int cantPregs, String tematica) {
+            var url = $"http://192.168.0.97:8080/api/pregunta/"+tematica+"/" + cantPregs;
             var request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "GET";
+            request.Method = "POST";
             request.ContentType = "application/json";
             request.Accept = "application/json";
 
             try {
                 using (WebResponse response = request.GetResponse()) {
                     using (Stream strReader = response.GetResponseStream()) {
-                        if (strReader == null) return;
+                        if (strReader == null) return null;
                         using (StreamReader objReader = new StreamReader(strReader)) {
                             string responseBody = objReader.ReadToEnd();
-                            todasPreguntasIngles = (Newtonsoft.Json.Linq.JObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseBody);
+                            return (Newtonsoft.Json.Linq.JObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseBody);
                         }
                     }
                 }
             } catch (WebException ex) {
                 Console.WriteLine(ex.Message);
-                return;
+                
             }
+            return null;
         }
-
+        /*
         public void GetPreguntasFol() {
             var url = $"http://192.168.0.97:8080/api/preguntasFol";
             var request = (HttpWebRequest)WebRequest.Create(url);
@@ -88,18 +85,7 @@ namespace JuegoQuizzReto {
                 return;
             }
         }
-
-        public Newtonsoft.Json.Linq.JObject TodasPreguntas {
-            set { todasPreguntas = value; }
-            get { return todasPreguntas; }
-        }
-        public Newtonsoft.Json.Linq.JObject TodasPreguntasFol {
-            set { todasPreguntasFol = value; }
-            get { return todasPreguntasFol; }
-        }
-        public Newtonsoft.Json.Linq.JObject TodasPreguntasIngles {
-            set { todasPreguntasIngles = value; }
-            get { return todasPreguntasIngles; }
-        }
+        */
+       
     }
 }

@@ -156,12 +156,12 @@ namespace JuegoQuizzReto {
             this.lblResp1.TabIndex = 8;
             this.lblResp1.Tag = "Falsa";
             this.lblResp1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblResp1.Click += new System.EventHandler(this.lblResp1_Click);
+            this.lblResp1.Click += new System.EventHandler(this.lblResp1_Click_1);
             // 
             // lblPuntuacion
             // 
             this.lblPuntuacion.BackColor = System.Drawing.Color.Transparent;
-            this.lblPuntuacion.Font = new System.Drawing.Font("Source Sans Pro Black", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntuacion.ForeColor = System.Drawing.Color.White;
             this.lblPuntuacion.Location = new System.Drawing.Point(0, 113);
             this.lblPuntuacion.Name = "lblPuntuacion";
@@ -180,7 +180,7 @@ namespace JuegoQuizzReto {
             this.lblResp4.TabIndex = 8;
             this.lblResp4.Tag = "Verdadera";
             this.lblResp4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblResp4.Click += new System.EventHandler(this.lblResp4_Click);
+            this.lblResp4.Click += new System.EventHandler(this.lblResp1_Click_1);
             // 
             // lblResp3
             // 
@@ -193,7 +193,7 @@ namespace JuegoQuizzReto {
             this.lblResp3.TabIndex = 8;
             this.lblResp3.Tag = "Falsa";
             this.lblResp3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblResp3.Click += new System.EventHandler(this.lblResp3_Click);
+            this.lblResp3.Click += new System.EventHandler(this.lblResp1_Click_1);
             // 
             // lblResp2
             // 
@@ -206,7 +206,7 @@ namespace JuegoQuizzReto {
             this.lblResp2.TabIndex = 8;
             this.lblResp2.Tag = "Falsa";
             this.lblResp2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblResp2.Click += new System.EventHandler(this.lblResp2_Click);
+            this.lblResp2.Click += new System.EventHandler(this.lblResp1_Click_1);
             // 
             // relojPartida
             // 

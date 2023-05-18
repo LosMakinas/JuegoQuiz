@@ -21,7 +21,13 @@ namespace JuegoQuizzReto {
         private Newtonsoft.Json.Linq.JObject todasPreguntas;
         private int pos;
         private int contEsperaSigPreg;
+        private int numAciertos;
+        private int comodinesGastados;
+        private int tiempoJugado;
+        private int contPreJuego;
         private string urlImagen;
+        private Partida partidaActual;
+
 
         public JugarPartida(MenuPrincipal menuPrincipal, String tematica,Usuario usuario, int numPreguntas) {
             InitializeComponent();
@@ -34,6 +40,10 @@ namespace JuegoQuizzReto {
             lblPregunta.Visible = false;
             cont = 10;
             puntuacion = 0;
+            numAciertos = 0;
+            comodinesGastados = 0;
+            tiempoJugado = 0;
+            contPreJuego = 10;
             tiempoPregunta = false;
             this.usuario = usuario;
             this.numPreguntas = numPreguntas;
@@ -43,10 +53,11 @@ namespace JuegoQuizzReto {
             this.numPreguntas = todasPreguntas["data"].Count();
             pos = 0;
             urlImagen = "";
+            Console.WriteLine(this.numPreguntas);
         }
 
         private void relojPartida_Tick(object sender, EventArgs e) {
-            if (cont == 0 && !tiempoPregunta) {
+            if (contPreJuego == 0 && !tiempoPregunta) {
                 picPreguntaResp.Visible = true;
                 lblPregunta.Visible = true;
                 lblResp1.Visible = true;
@@ -56,7 +67,8 @@ namespace JuegoQuizzReto {
                 lblNumPregunta.Text = "Pregunta " + numPreguntaAct;
                 lblTiempoRest.Visible = true;
                 picFotoPregunta.Image = Properties.Resources.logo_definitivo2;
-                cont = 10;
+                cont = int.Parse(todasPreguntas["data"][pos]["tiempo"].ToString());
+                contPreJuego = 10;
                 tiempoPregunta = true;
             } else if (cont == 0 && tiempoPregunta) {
                 sigPregunta();
@@ -70,14 +82,21 @@ namespace JuegoQuizzReto {
                     lblTiempoRest.Text = "00:0" + cont;
                 }
             } else {
-                if (cont > 9) {
-                    lblTiempoRest.Text = "00:" + cont;
+                if (contPreJuego > 9) {
+                    lblTiempoRest.Text = "00:" + contPreJuego;
                 } else {
-                    lblTiempoRest.Text = "00:0" + cont;
+                    lblTiempoRest.Text = "00:0" + contPreJuego;
                 }
             }
             //Console.WriteLine(cont);
-            cont--;
+            if (tiempoPregunta)
+            {
+                cont--;
+            }
+            else 
+            {
+                contPreJuego--;
+            }
         }
 
         public void sigPregunta() {
@@ -100,14 +119,14 @@ namespace JuegoQuizzReto {
             else 
             {
                 lblPregunta.Text = todasPreguntas["data"][pos]["pregunta"].ToString();
-                lblResp1.Text = todasPreguntas["data"][pos]["respuestas"][0]["respuesta1"].ToString();
-                lblResp2.Text = todasPreguntas["data"][pos]["respuestas"][1]["respuesta2"].ToString();
-                lblResp3.Text = todasPreguntas["data"][pos]["respuestas"][2]["respuesta3"].ToString();
-                lblResp4.Text = todasPreguntas["data"][pos]["respuestas"][3]["respuesta4"].ToString();
-                lblResp1.Tag = todasPreguntas["data"][pos]["respuestas"][0]["correcta"].ToString();
-                lblResp2.Tag = todasPreguntas["data"][pos]["respuestas"][1]["correcta"].ToString();
-                lblResp3.Tag = todasPreguntas["data"][pos]["respuestas"][2]["correcta"].ToString();
-                lblResp4.Tag = todasPreguntas["data"][pos]["respuestas"][3]["correcta"].ToString();
+                lblResp1.Text = todasPreguntas["data"][pos]["respuesta1"]["respuesta"].ToString();
+                lblResp2.Text = todasPreguntas["data"][pos]["respuesta2"]["respuesta"].ToString();
+                lblResp3.Text = todasPreguntas["data"][pos]["respuesta3"]["respuesta"].ToString();
+                lblResp4.Text = todasPreguntas["data"][pos]["respuesta4"]["respuesta"].ToString();
+                lblResp1.Tag = todasPreguntas["data"][pos]["respuesta1"]["correcta"].ToString();
+                lblResp2.Tag = todasPreguntas["data"][pos]["respuesta2"]["correcta"].ToString();
+                lblResp3.Tag = todasPreguntas["data"][pos]["respuesta3"]["correcta"].ToString();
+                lblResp4.Tag = todasPreguntas["data"][pos]["respuesta4"]["correcta"].ToString();
                 contEsperaSigPreg = 10;
                 relojEsperarSigPregunta.Start();
             }
@@ -116,17 +135,22 @@ namespace JuegoQuizzReto {
 
 
         private void JugarPartida_Load(object sender, EventArgs e) {
+            if (numPreguntas <= 0)
+            {
+                JugarPartida_FormClosing(null, null);
+            }
             lblPregunta.Text = todasPreguntas["data"][pos]["pregunta"].ToString();
-            lblResp1.Text = todasPreguntas["data"][pos]["respuestas"][0]["respuesta1"].ToString();
-            lblResp2.Text = todasPreguntas["data"][pos]["respuestas"][1]["respuesta2"].ToString();
-            lblResp3.Text = todasPreguntas["data"][pos]["respuestas"][2]["respuesta3"].ToString();
-            lblResp4.Text = todasPreguntas["data"][pos]["respuestas"][3]["respuesta4"].ToString();
-            lblResp1.Tag = todasPreguntas["data"][pos]["respuestas"][0]["correcta"].ToString();
-            lblResp2.Tag = todasPreguntas["data"][pos]["respuestas"][1]["correcta"].ToString();
-            lblResp3.Tag = todasPreguntas["data"][pos]["respuestas"][2]["correcta"].ToString();
-            lblResp4.Tag = todasPreguntas["data"][pos]["respuestas"][3]["correcta"].ToString();
+            lblResp1.Text = todasPreguntas["data"][pos]["respuesta1"]["respuesta"].ToString();
+            lblResp2.Text = todasPreguntas["data"][pos]["respuesta2"]["respuesta"].ToString();
+            lblResp3.Text = todasPreguntas["data"][pos]["respuesta3"]["respuesta"].ToString();
+            lblResp4.Text = todasPreguntas["data"][pos]["respuesta4"]["respuesta"].ToString();
+            lblResp1.Tag = todasPreguntas["data"][pos]["respuesta1"]["correcta"].ToString();
+            lblResp2.Tag = todasPreguntas["data"][pos]["respuesta2"]["correcta"].ToString();
+            lblResp3.Tag = todasPreguntas["data"][pos]["respuesta3"]["correcta"].ToString();
+            lblResp4.Tag = todasPreguntas["data"][pos]["respuesta4"]["correcta"].ToString();
             urlImagen = "http://192.168.0.84/PaginaReto3Dam1/images/logo-definitivo.png";
             picFotoPregunta.LoadAsync(@""+urlImagen);
+            cont = int.Parse(todasPreguntas["data"][pos]["tiempo"].ToString());
             relojPartida.Start();
         }
 
@@ -138,6 +162,7 @@ namespace JuegoQuizzReto {
                     lblSender.ForeColor = Color.Green;
                     puntuacion = puntuacion + (100 * cont * Convert.ToInt32(todasPreguntas["data"][pos]["dificultad"].ToString()));
                     lblPuntuacion.Text = puntuacion + " Pts";
+                    numAciertos++;
                 }
                 else
                 {
@@ -159,6 +184,7 @@ namespace JuegoQuizzReto {
                     }
                     relojPartida.Stop();
                 }
+                tiempoJugado += int.Parse(todasPreguntas["data"][pos]["tiempo"].ToString()) - cont;
                 sigPregunta();
         }
 
@@ -188,7 +214,8 @@ namespace JuegoQuizzReto {
         private void JugarPartida_FormClosing(object sender, FormClosingEventArgs e) {
             relojPartida.Stop();
             relojEsperarSigPregunta.Stop();
-            menuPrincipal.Show();
+            partidaActual = new Partida(usuario.Id, puntuacion, numAciertos, DateTime.Today, comodinesGastados, numPreguntaAct, tiempoJugado);
+            new Finalpartida(menuPrincipal, partidaActual);
             this.Dispose();
         }
 

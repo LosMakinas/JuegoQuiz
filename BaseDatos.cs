@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -37,6 +38,14 @@ namespace JuegoQuizzReto {
                 return reader.GetInt32(0);
             }
             return 0;
+        }
+
+        public void insertarPuntuacion(Partida partida)
+        {
+            DateTime fecha = DateTime.Today;
+            string strInsertSql = "INSERT INTO puntuacion (puntuacion, numAciertos, fecha, comodinesGastados, tirada, tiempoJugado, idUsuario) VALUES ("+partida.Puntuacion+ ", "+partida.NumAciertos+ ", "+partida.Fecha.Date.ToString()+", " + partida.ComodinesGastados+ ", "+partida.Tirada+ ", "+partida.TiempoJugado+ ", "+partida.IdUsuario+")";
+            MySqlCommand com = new MySqlCommand(strInsertSql, cn);
+            com.ExecuteNonQuery();
         }
     }
 }

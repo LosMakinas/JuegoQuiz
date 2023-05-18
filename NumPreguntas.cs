@@ -23,9 +23,9 @@ namespace JuegoQuizzReto {
 
         private void crearPartida(object sender, EventArgs e) {
             if (rbFol.Checked) {
-                jugarPartida = new JugarPartida(menu, "Fol",usuario, Convert.ToInt32(((Button)sender).Text.ToString()));
+                jugarPartida = new JugarPartida(menu, "Fol",usuario, Convert.ToInt32(((Button)sender).Text));
             } else if(rbIngles.Checked) {
-                jugarPartida = new JugarPartida(menu, "Ingles", usuario, Convert.ToInt32(((Button)sender).Text.ToString()));
+                jugarPartida = new JugarPartida(menu, "Ingles", usuario, Convert.ToInt32(((Button)sender).Text));
             }
             this.Hide();
             jugarPartida.Show();

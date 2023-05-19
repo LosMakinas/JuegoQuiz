@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.WebRequestMethods;
 
+
 namespace JuegoQuizzReto {
     public partial class JugarPartida : Form {
 
@@ -50,6 +51,8 @@ namespace JuegoQuizzReto {
             numPreguntaAct = 1;
             pregunta = new Pregunta();
             todasPreguntas = pregunta.GetPreguntas(numPreguntas, tematica);
+            
+
             this.numPreguntas = todasPreguntas["data"].Count();
             pos = 0;
             urlImagen = "";

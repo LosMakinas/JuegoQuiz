@@ -42,8 +42,7 @@ namespace JuegoQuizzReto {
 
         public void insertarPuntuacion(Partida partida)
         {
-            DateTime fecha = DateTime.Today;
-            string strInsertSql = "INSERT INTO puntuacion (puntuacion, numAciertos, fecha, comodinesGastados, tirada, tiempoJugado, idUsuario) VALUES ("+partida.Puntuacion+ ", "+partida.NumAciertos+ ", "+partida.Fecha.Date.ToString()+", " + partida.ComodinesGastados+ ", "+partida.Tirada+ ", "+partida.TiempoJugado+ ", "+partida.IdUsuario+")";
+            string strInsertSql = "INSERT INTO puntuacion (puntuacion, numAciertos, fecha, comodinesGastados, tirada, tiempoJugado, idUsuario) VALUES ("+partida.Puntuacion+ ", "+partida.NumAciertos+ ", CURDATE(), " + partida.ComodinesGastados+ ", "+partida.Tirada+ ", "+partida.TiempoJugado+ ", "+partida.IdUsuario+")";
             MySqlCommand com = new MySqlCommand(strInsertSql, cn);
             com.ExecuteNonQuery();
         }

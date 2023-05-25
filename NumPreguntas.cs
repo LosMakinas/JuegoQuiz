@@ -30,5 +30,10 @@ namespace JuegoQuizzReto {
             this.Hide();
             jugarPartida.Show();
         }
+
+        private void NumPreguntas_FormClosing(object sender, FormClosingEventArgs e) {
+            menu.Show();
+            this.Dispose();
+        }
     }
 }

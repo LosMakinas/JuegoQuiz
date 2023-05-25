@@ -77,6 +77,14 @@ namespace JuegoQuizzReto
             menuPrincipal.Show();
         }
 
+        private void btnSalir_MouseEnter(object sender, EventArgs e) {
+            btnSalir.ForeColor = Color.White;
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e) {
+            btnSalir.ForeColor = Color.Black;
+        }
+
         private void finalCont() 
         {
             relojPunts.Stop();

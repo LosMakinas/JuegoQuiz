@@ -35,20 +35,12 @@ namespace JuegoQuizzReto {
             btnJugar.ForeColor = Color.Black;
         }
 
-        private void btnModificaciones_MouseEnter(object sender, EventArgs e) {
-            btnDesbloqueables.ForeColor = Color.Black;
-        }
-
         private void btnMarcador_MouseEnter(object sender, EventArgs e) {
             btnMarcador.ForeColor = Color.Black;
         }
 
         private void btnMarcador_MouseLeave(object sender, EventArgs e) {
             btnMarcador.ForeColor = Color.White;
-        }
-
-        private void btnModificaciones_MouseLeave(object sender, EventArgs e) {
-            btnDesbloqueables.ForeColor = Color.White;
         }
 
         private void btnJugar_MouseLeave(object sender, EventArgs e) {
@@ -80,6 +72,14 @@ namespace JuegoQuizzReto {
             {
                 new BaseDatos().ResetProgess(usuario.Id);
             }
+        }
+
+        private void btnSalir_MouseEnter(object sender, EventArgs e) {
+            btnSalir.ForeColor = Color.Black;
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e) {
+            btnSalir.ForeColor = Color.White;
         }
     }
 }

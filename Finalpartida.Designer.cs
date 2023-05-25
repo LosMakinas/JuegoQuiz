@@ -63,6 +63,8 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Visible = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.MouseEnter += new System.EventHandler(this.btnSalir_MouseEnter);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
             // 
             // relojPunts
             // 

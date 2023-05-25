@@ -189,6 +189,7 @@
             this.MinimizeBox = false;
             this.Name = "NumPreguntas";
             this.Text = "Número de Preguntas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumPreguntas_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -31,18 +31,12 @@ namespace JuegoQuizzReto
 
         private void Finalpartida_Click(object sender, EventArgs e)
         {
-            relojPunts.Stop();
-            btnSalir.Visible = true;
-            lblPuntuacion.Text = puntuacion + " Puntos";
-            new BaseDatos().insertarPuntuacion(partidaPasada);
+            finalCont();
         }
 
         private void lblPuntuacion_Click(object sender, EventArgs e)
         {
-            relojPunts.Stop();
-            btnSalir.Visible = true;
-            lblPuntuacion.Text = puntuacion + " Puntos";
-            new BaseDatos().insertarPuntuacion(partidaPasada);
+            finalCont();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -71,9 +65,7 @@ namespace JuegoQuizzReto
             puntuacionContador += sum;
             if (puntuacionContador == puntuacion)
             {
-                new BaseDatos().insertarPuntuacion(partidaPasada);
-                btnSalir.Visible = true;
-                relojPunts.Stop();
+                finalCont();
             }
             
             lblPuntuacion.Text = puntuacionContador + " Puntos";
@@ -83,6 +75,14 @@ namespace JuegoQuizzReto
         private void Finalpartida_FormClosing(object sender, FormClosingEventArgs e)
         {
             menuPrincipal.Show();
+        }
+
+        private void finalCont() 
+        {
+            relojPunts.Stop();
+            btnSalir.Visible = true;
+            lblPuntuacion.Text = puntuacion + " Puntos";
+            new BaseDatos().insertarPuntuacion(partidaPasada);
         }
     }
 }

@@ -30,7 +30,6 @@
             this.btnTirada10 = new System.Windows.Forms.Button();
             this.btnTirada20 = new System.Windows.Forms.Button();
             this.btnTirada50 = new System.Windows.Forms.Button();
-            this.btnInfinito = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbIngles = new System.Windows.Forms.RadioButton();
@@ -121,19 +120,6 @@
             this.btnTirada50.UseVisualStyleBackColor = false;
             this.btnTirada50.Click += new System.EventHandler(this.crearPartida);
             // 
-            // btnInfinito
-            // 
-            this.btnInfinito.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfinito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfinito.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnInfinito.ForeColor = System.Drawing.Color.White;
-            this.btnInfinito.Location = new System.Drawing.Point(221, 229);
-            this.btnInfinito.Name = "btnInfinito";
-            this.btnInfinito.Size = new System.Drawing.Size(165, 46);
-            this.btnInfinito.TabIndex = 2;
-            this.btnInfinito.Text = "Infinito";
-            this.btnInfinito.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
@@ -188,8 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(572, 281);
-            this.Controls.Add(this.btnInfinito);
+            this.ClientSize = new System.Drawing.Size(572, 233);
             this.Controls.Add(this.btnTirada50);
             this.Controls.Add(this.btnTirada40);
             this.Controls.Add(this.btnTirada30);
@@ -218,7 +203,6 @@
         private System.Windows.Forms.Button btnTirada10;
         private System.Windows.Forms.Button btnTirada20;
         private System.Windows.Forms.Button btnTirada50;
-        private System.Windows.Forms.Button btnInfinito;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbIngles;

@@ -44,11 +44,24 @@ namespace JuegoQuizzReto {
             this.lblSigPregunta = new System.Windows.Forms.Label();
             this.relojEsperarSigPregunta = new System.Windows.Forms.Timer(this.components);
             this.lblExplicacionRespCorrecta = new System.Windows.Forms.Label();
+            this.relojPreguntasCor = new System.Windows.Forms.Timer(this.components);
+            this.picCom50 = new System.Windows.Forms.PictureBox();
+            this.picComSaltar = new System.Windows.Forms.PictureBox();
+            this.picExplCom = new System.Windows.Forms.PictureBox();
+            this.lbl50 = new System.Windows.Forms.Label();
+            this.lblSiguiente = new System.Windows.Forms.Label();
+            this.lblPista = new System.Windows.Forms.Label();
+            this.picComodin = new System.Windows.Forms.PictureBox();
+            this.lblComodin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoPregunta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPreguntaResp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCom50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picComSaltar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExplCom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picComodin)).BeginInit();
             this.SuspendLayout();
             // 
             // picFotoPregunta
@@ -218,7 +231,7 @@ namespace JuegoQuizzReto {
             this.lblSigPregunta.BackColor = System.Drawing.Color.Transparent;
             this.lblSigPregunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSigPregunta.ForeColor = System.Drawing.Color.White;
-            this.lblSigPregunta.Location = new System.Drawing.Point(459, 167);
+            this.lblSigPregunta.Location = new System.Drawing.Point(472, 518);
             this.lblSigPregunta.Name = "lblSigPregunta";
             this.lblSigPregunta.Size = new System.Drawing.Size(369, 180);
             this.lblSigPregunta.TabIndex = 10;
@@ -242,12 +255,125 @@ namespace JuegoQuizzReto {
             this.lblExplicacionRespCorrecta.TabIndex = 11;
             this.lblExplicacionRespCorrecta.Text = "Explicación:";
             // 
+            // relojPreguntasCor
+            // 
+            this.relojPreguntasCor.Interval = 1000;
+            this.relojPreguntasCor.Tick += new System.EventHandler(this.relojPreguntasCor_Tick);
+            // 
+            // picCom50
+            // 
+            this.picCom50.BackColor = System.Drawing.Color.Transparent;
+            this.picCom50.Image = global::JuegoQuizzReto.Properties.Resources._50_final;
+            this.picCom50.Location = new System.Drawing.Point(7, 176);
+            this.picCom50.Name = "picCom50";
+            this.picCom50.Size = new System.Drawing.Size(86, 57);
+            this.picCom50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCom50.TabIndex = 12;
+            this.picCom50.TabStop = false;
+            this.picCom50.Visible = false;
+            this.picCom50.Click += new System.EventHandler(this.picCom50_Click);
+            // 
+            // picComSaltar
+            // 
+            this.picComSaltar.BackColor = System.Drawing.Color.Transparent;
+            this.picComSaltar.Image = global::JuegoQuizzReto.Properties.Resources.flecha_como;
+            this.picComSaltar.Location = new System.Drawing.Point(116, 176);
+            this.picComSaltar.Name = "picComSaltar";
+            this.picComSaltar.Size = new System.Drawing.Size(86, 57);
+            this.picComSaltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picComSaltar.TabIndex = 13;
+            this.picComSaltar.TabStop = false;
+            this.picComSaltar.Visible = false;
+            this.picComSaltar.Click += new System.EventHandler(this.picComSaltar_Click);
+            // 
+            // picExplCom
+            // 
+            this.picExplCom.BackColor = System.Drawing.Color.Transparent;
+            this.picExplCom.Image = global::JuegoQuizzReto.Properties.Resources.expl_como;
+            this.picExplCom.Location = new System.Drawing.Point(7, 239);
+            this.picExplCom.Name = "picExplCom";
+            this.picExplCom.Size = new System.Drawing.Size(86, 57);
+            this.picExplCom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picExplCom.TabIndex = 14;
+            this.picExplCom.TabStop = false;
+            this.picExplCom.Visible = false;
+            this.picExplCom.Click += new System.EventHandler(this.picExplCom_Click);
+            // 
+            // lbl50
+            // 
+            this.lbl50.AutoSize = true;
+            this.lbl50.BackColor = System.Drawing.Color.Transparent;
+            this.lbl50.ForeColor = System.Drawing.Color.White;
+            this.lbl50.Location = new System.Drawing.Point(96, 176);
+            this.lbl50.Name = "lbl50";
+            this.lbl50.Size = new System.Drawing.Size(18, 13);
+            this.lbl50.TabIndex = 15;
+            this.lbl50.Text = "x0";
+            this.lbl50.Visible = false;
+            // 
+            // lblSiguiente
+            // 
+            this.lblSiguiente.AutoSize = true;
+            this.lblSiguiente.BackColor = System.Drawing.Color.Transparent;
+            this.lblSiguiente.ForeColor = System.Drawing.Color.White;
+            this.lblSiguiente.Location = new System.Drawing.Point(208, 176);
+            this.lblSiguiente.Name = "lblSiguiente";
+            this.lblSiguiente.Size = new System.Drawing.Size(18, 13);
+            this.lblSiguiente.TabIndex = 16;
+            this.lblSiguiente.Text = "x0";
+            this.lblSiguiente.Visible = false;
+            // 
+            // lblPista
+            // 
+            this.lblPista.AutoSize = true;
+            this.lblPista.BackColor = System.Drawing.Color.Transparent;
+            this.lblPista.ForeColor = System.Drawing.Color.White;
+            this.lblPista.Location = new System.Drawing.Point(96, 239);
+            this.lblPista.Name = "lblPista";
+            this.lblPista.Size = new System.Drawing.Size(18, 13);
+            this.lblPista.TabIndex = 17;
+            this.lblPista.Text = "x0";
+            this.lblPista.Visible = false;
+            // 
+            // picComodin
+            // 
+            this.picComodin.BackColor = System.Drawing.Color.Transparent;
+            this.picComodin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picComodin.ImageLocation = "";
+            this.picComodin.Location = new System.Drawing.Point(116, 249);
+            this.picComodin.Name = "picComodin";
+            this.picComodin.Size = new System.Drawing.Size(247, 115);
+            this.picComodin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picComodin.TabIndex = 18;
+            this.picComodin.TabStop = false;
+            // 
+            // lblComodin
+            // 
+            this.lblComodin.BackColor = System.Drawing.Color.Transparent;
+            this.lblComodin.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComodin.ForeColor = System.Drawing.Color.White;
+            this.lblComodin.Location = new System.Drawing.Point(117, 367);
+            this.lblComodin.Name = "lblComodin";
+            this.lblComodin.Size = new System.Drawing.Size(246, 56);
+            this.lblComodin.TabIndex = 19;
+            this.lblComodin.Text = "lblComodin";
+            this.lblComodin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblComodin.Visible = false;
+            // 
             // JugarPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
             this.ClientSize = new System.Drawing.Size(1284, 811);
+            this.Controls.Add(this.lblComodin);
+            this.Controls.Add(this.picComodin);
+            this.Controls.Add(this.lblPista);
+            this.Controls.Add(this.lblSiguiente);
+            this.Controls.Add(this.lbl50);
+            this.Controls.Add(this.picExplCom);
+            this.Controls.Add(this.picComSaltar);
+            this.Controls.Add(this.picCom50);
             this.Controls.Add(this.lblExplicacionRespCorrecta);
             this.Controls.Add(this.lblSigPregunta);
             this.Controls.Add(this.lblPuntuacion);
@@ -274,7 +400,12 @@ namespace JuegoQuizzReto {
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorazon2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCom50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picComSaltar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExplCom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picComodin)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -296,5 +427,14 @@ namespace JuegoQuizzReto {
         private System.Windows.Forms.Label lblSigPregunta;
         private System.Windows.Forms.Timer relojEsperarSigPregunta;
         private Label lblExplicacionRespCorrecta;
+        private Timer relojPreguntasCor;
+        private PictureBox picCom50;
+        private PictureBox picComSaltar;
+        private PictureBox picExplCom;
+        private Label lbl50;
+        private Label lblSiguiente;
+        private Label lblPista;
+        private PictureBox picComodin;
+        private Label lblComodin;
     }
 }

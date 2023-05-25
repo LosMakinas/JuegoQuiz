@@ -29,6 +29,7 @@
             this.btnMarcador = new System.Windows.Forms.Button();
             this.btnDesbloqueables = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnReiniciarProgreso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             this.btnMarcador.TabIndex = 2;
             this.btnMarcador.Text = "Marcador";
             this.btnMarcador.UseVisualStyleBackColor = false;
+            this.btnMarcador.Click += new System.EventHandler(this.btnMarcador_Click);
             this.btnMarcador.MouseEnter += new System.EventHandler(this.btnMarcador_MouseEnter);
             this.btnMarcador.MouseLeave += new System.EventHandler(this.btnMarcador_MouseLeave);
             // 
@@ -106,12 +108,28 @@
             this.picLogo.TabIndex = 3;
             this.picLogo.TabStop = false;
             // 
+            // btnReiniciarProgreso
+            // 
+            this.btnReiniciarProgreso.BackColor = System.Drawing.Color.Transparent;
+            this.btnReiniciarProgreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReiniciarProgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReiniciarProgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnReiniciarProgreso.ForeColor = System.Drawing.Color.White;
+            this.btnReiniciarProgreso.Location = new System.Drawing.Point(12, 12);
+            this.btnReiniciarProgreso.Name = "btnReiniciarProgreso";
+            this.btnReiniciarProgreso.Size = new System.Drawing.Size(133, 46);
+            this.btnReiniciarProgreso.TabIndex = 4;
+            this.btnReiniciarProgreso.Text = "Reiniciar Progreso";
+            this.btnReiniciarProgreso.UseVisualStyleBackColor = false;
+            this.btnReiniciarProgreso.Click += new System.EventHandler(this.btnReiniciarProgreso_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JuegoQuizzReto.Properties.Resources.Galaxy_repeating;
             this.ClientSize = new System.Drawing.Size(624, 701);
+            this.Controls.Add(this.btnReiniciarProgreso);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnJugar);
             this.Controls.Add(this.btnMarcador);
@@ -133,5 +151,6 @@
         private System.Windows.Forms.Button btnMarcador;
         private System.Windows.Forms.Button btnDesbloqueables;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Button btnReiniciarProgreso;
     }
 }

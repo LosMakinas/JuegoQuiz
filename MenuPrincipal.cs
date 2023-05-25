@@ -16,6 +16,7 @@ namespace JuegoQuizzReto {
         private InicioSesion inicioSesion;
         private JugarPartida jugarPartida;
         private NumPreguntas numPreguntas;
+        private Marcador marcadorPunts;
 
         public MenuPrincipal(Usuario usuario, InicioSesion sesion) {
             InitializeComponent();
@@ -63,6 +64,22 @@ namespace JuegoQuizzReto {
         public InicioSesion InicioSesion{
             set { inicioSesion = value; }
             get { return inicioSesion; }
+        }
+
+        private void btnMarcador_Click(object sender, EventArgs e)
+        {
+            marcadorPunts = new Marcador(this);
+            marcadorPunts.Visible = true;
+            this.Hide();
+        }
+
+        private void btnReiniciarProgreso_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Estas seguro de que quieres eliminar tu progreso? No se puede revertir", "Eliminar Progeso?", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Yes)
+            {
+                new BaseDatos().ResetProgess(usuario.Id);
+            }
         }
     }
 }

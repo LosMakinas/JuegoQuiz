@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos.cs" />
+    <Compile Include="Comodin.cs" />
     <Compile Include="Finalpartida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +227,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\distancia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expl-como.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-como.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

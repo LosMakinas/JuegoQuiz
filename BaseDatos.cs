@@ -42,9 +42,69 @@ namespace JuegoQuizzReto {
 
         public void insertarPuntuacion(Partida partida)
         {
+            if (partida.Puntuacion <= 0)
+            {
+                return;
+            }
             string strInsertSql = "INSERT INTO puntuacion (puntuacion, numAciertos, fecha, comodinesGastados, tirada, tiempoJugado, idUsuario) VALUES ("+partida.Puntuacion+ ", "+partida.NumAciertos+ ", CURDATE(), " + partida.ComodinesGastados+ ", "+partida.Tirada+ ", "+partida.TiempoJugado+ ", "+partida.IdUsuario+")";
             MySqlCommand com = new MySqlCommand(strInsertSql, cn);
             com.ExecuteNonQuery();
+        }
+
+        public MySqlDataReader obtenerPuntuacion()
+        {
+            string strQuery = "select puntuacion.*, usuario.nombreUsuario FROM puntuacion INNER JOIN usuario ON usuario.idUsuario = puntuacion.idUsuario";
+            using (MySqlCommand com = new MySqlCommand(strQuery, cn))
+            {
+                MySqlDataReader reader = com.ExecuteReader();
+                return reader;
+            }
+            return null;
+        }
+
+        public MySqlDataReader obtenerMaxOCantidadPuntuacion(string maxOCant)
+        {
+            string strQuery = "";
+            if (maxOCant == "MaxPunt")
+            {
+                strQuery = "SELECT MAX(puntuacion), usuario.nombreUsuario FROM puntuacion INNER JOIN usuario ON usuario.idUsuario = puntuacion.idUsuario";
+            }
+            else if (maxOCant == "PartidasJug")
+            {
+                strQuery = "SELECT idUsuario, nombreUsuario, (SELECT COUNT(*) FROM puntuacion WHERE idUsuario = usuario.idUsuario) AS totalPuntuaciones FROM usuario";
+            }
+            else {
+                return null;
+            }
+            
+            
+            using (MySqlCommand com = new MySqlCommand(strQuery, cn))
+            {
+                MySqlDataReader reader = com.ExecuteReader();
+                return reader;
+            }
+            return null;
+        }
+
+        public MySqlDataReader obtenerPuntuacionQuery(String tabla, String AscDesc)
+        {
+            string strQuery = "select puntuacion.*, usuario.nombreUsuario FROM puntuacion INNER JOIN usuario ON usuario.idUsuario = puntuacion.idUsuario ORDER BY "+ tabla +" " + AscDesc;
+            using (MySqlCommand com = new MySqlCommand(strQuery, cn))
+            {
+                MySqlDataReader reader = com.ExecuteReader();
+                return reader;
+            }
+            return null;
+        }
+
+        public void ResetProgess(int idUsuario)
+        {
+            string strNonQuery = "call resetProgress("+idUsuario+")";
+            using (MySqlCommand com = new MySqlCommand(strNonQuery, cn))
+            {
+                com.ExecuteNonQuery();
+                return;
+            }
         }
     }
 }

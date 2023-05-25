@@ -63,6 +63,16 @@ namespace JuegoQuizzReto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _50_final {
+            get {
+                object obj = ResourceManager.GetObject("50-final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cartel {
             get {
                 object obj = ResourceManager.GetObject("cartel", resourceCulture);
@@ -96,6 +106,26 @@ namespace JuegoQuizzReto.Properties {
         internal static System.Drawing.Bitmap distancia {
             get {
                 object obj = ResourceManager.GetObject("distancia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap expl_como {
+            get {
+                object obj = ResourceManager.GetObject("expl-como", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flecha_como {
+            get {
+                object obj = ResourceManager.GetObject("flecha-como", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

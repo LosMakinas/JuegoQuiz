@@ -290,8 +290,12 @@ namespace JuegoQuizzReto {
 
                 if (pos+1 >= numPreguntas)
                 {
-                    JugarPartida_FormClosing(null, null);
-                    relojPartida.Stop();
+                relojEsperarSigPregunta.Stop();
+                relojPreguntasCor.Stop();
+                relojPartida.Stop();
+                JugarPartida_FormClosing(null, null);
+                return;
+                    
                 }
             tiempoJugado += int.Parse(todasPreguntas["data"][pos]["tiempo"].ToString()) - cont;
             sigPregunta();

@@ -17,7 +17,7 @@ namespace JuegoQuizzReto
         private Partida partidaPasada;
         private int sum;
 
-        public Finalpartida(MenuPrincipal menuPrincipal, Partida partidaPasada)
+        public Finalpartida(MenuPrincipal menuPrincipal, Partida partidaPasada, JugarPartida jugarPartida)
         {
             InitializeComponent();
             this.menuPrincipal = menuPrincipal;
@@ -27,6 +27,7 @@ namespace JuegoQuizzReto
             puntuacionContador = 0;
             sum = 0;
             relojPunts.Start();
+            jugarPartida.Dispose();
         }
 
         private void Finalpartida_Click(object sender, EventArgs e)
@@ -74,6 +75,7 @@ namespace JuegoQuizzReto
 
         private void Finalpartida_FormClosing(object sender, FormClosingEventArgs e)
         {
+
             menuPrincipal.Show();
         }
 

@@ -56,7 +56,7 @@ namespace JuegoQuizzReto {
             comodinesGastados = 0;
             tiempoJugado = 0;
             contPregCor = 3;
-            contPreJuego = 5;
+            contPreJuego = 2;
             tiempoPregunta = false;
             lblActivos = false;
             this.usuario = usuario;
@@ -109,8 +109,16 @@ namespace JuegoQuizzReto {
                 lblNumPregunta.Text = "Pregunta " + (pos + 1);
                 lblTiempoRest.Visible = true;
                 picFotoPregunta.Image = Properties.Resources.logo_definitivo2;
-                cont = int.Parse(todasPreguntas["data"][pos]["tiempo"].ToString());
-                contPreJuego = 10;
+                try
+                {
+                    cont = int.Parse(todasPreguntas["data"][pos]["tiempo"].ToString());
+                }
+                catch (Exception)
+                {
+
+                }
+                
+                contPreJuego = 2;
                 tiempoPregunta = true;
             } else if (cont == 0 && tiempoPregunta) {
                 if (picCorazon3.Tag.ToString() == "Full")
@@ -160,30 +168,28 @@ namespace JuegoQuizzReto {
 
         public void sigPregunta() {
             relojPartida.Stop();
-            /*
-            lblSigPregunta.Visible = true;
-            
-            lblPregunta.Visible = false;
-            
-            lblResp1.Visible = false;
-            lblResp2.Visible = false;
-            lblResp3.Visible = false;
-            lblResp4.Visible = false;
-            
-            picPreguntaResp.Visible = false;
-            
-            picFotoPregunta.Image = Properties.Resources.cartel;
-            */
+
 
             lblActivos = false;
-            lblExplicacionRespCorrecta.Text = "Explicación: "+todasPreguntas["data"][pos]["descripcion"].ToString();
-            //System.Threading.Thread.Sleep(5000);
+            try
+            {
+                lblExplicacionRespCorrecta.Text = "Explicación: " + todasPreguntas["data"][pos]["descripcion"].ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+            
+
             relojPreguntasCor.Start();
             
         }
 
 
         private void JugarPartida_Load(object sender, EventArgs e) {
+            try
+            {
+
             if (numPreguntas <= 0)
             {
                 JugarPartida_FormClosing(null, null);
@@ -196,17 +202,7 @@ namespace JuegoQuizzReto {
             }
             arrayPregsRand = arrayPregs.OrderBy(x => rnd.Next()).ToArray();
             lblPregunta.Text = todasPreguntas["data"][pos]["pregunta"].ToString();
-            /*
-            lblResp1.Text = todasPreguntas["data"][pos]["respuesta1"]["respuesta"].ToString();
-            lblResp2.Text = todasPreguntas["data"][pos]["respuesta2"]["respuesta"].ToString();
-            lblResp3.Text = todasPreguntas["data"][pos]["respuesta3"]["respuesta"].ToString();
-            lblResp4.Text = todasPreguntas["data"][pos]["respuesta4"]["respuesta"].ToString();
-            
-            lblResp1.Tag = todasPreguntas["data"][pos]["respuesta1"]["correcta"].ToString();
-            lblResp2.Tag = todasPreguntas["data"][pos]["respuesta2"]["correcta"].ToString();
-            lblResp3.Tag = todasPreguntas["data"][pos]["respuesta3"]["correcta"].ToString();
-            lblResp4.Tag = todasPreguntas["data"][pos]["respuesta4"]["correcta"].ToString();
-            */
+
             lblResp1.Text = arrayPregsRand[0]["respuesta"].ToString();
             lblResp2.Text = arrayPregsRand[1]["respuesta"].ToString();
             lblResp3.Text = arrayPregsRand[2]["respuesta"].ToString();
@@ -218,34 +214,11 @@ namespace JuegoQuizzReto {
             lblResp4.Tag = arrayPregsRand[3]["correcta"].ToString();
 
             urlImagen = todasPreguntas["data"][pos]["imagen"].ToString();
-
-           /* 
-            string[] subsUrl = urlImagen.Split('/');
-
-            subsUrl[0] = subsUrl[0].ToLower();
-
-            StringBuilder strBuild = new StringBuilder();
-
-            for (int i = 0; i < subsUrl.Length; i++)
-            {
-                if (i == subsUrl.Length - 1)
-                {
-                    strBuild.Append(subsUrl[i]);
-                }
-                else
-                {
-                    strBuild.Append(subsUrl[i] + "/");
-                }
             }
-
-            urlImagen = strBuild.ToString();
-
-            if (string.IsNullOrEmpty(urlImagen))
+            catch (Exception)
             {
-                urlImagen = ""; 
+
             }
-            */
-            //Console.WriteLine("http://192.168.0.76/gitPaginaReto/P-ginaWeb/" + urlImagen);
 
             try
             {
@@ -255,7 +228,10 @@ namespace JuegoQuizzReto {
             {
                 picFotoPregunta.Image = Properties.Resources.logo_definitivo;
             }
+            try
+            {
 
+            
 
             cont = int.Parse(todasPreguntas["data"][pos]["tiempo"].ToString());
             Newtonsoft.Json.Linq.JToken todosComodines = todasPreguntas["data"][pos]["comodines"];
@@ -263,6 +239,12 @@ namespace JuegoQuizzReto {
             for (int i = 0; i < lengthPreg; i++)
             {
                 arrayComodin.Add(new Comodin(todosComodines[i]["tipo"].ToString(), todosComodines[i]["descripcion"].ToString(), todosComodines[i]["imagen"].ToString(), int.Parse(todosComodines[i]["cantidad"].ToString()), int.Parse(todosComodines[i]["puntuacion"].ToString())));
+            }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
             lblActivos = true;
             relojPartida.Start();
@@ -317,7 +299,7 @@ namespace JuegoQuizzReto {
 
         private void relojEsperarSigPregunta_Tick(object sender, EventArgs e) {
             
-            if (contEsperaSigPreg == 9)
+            if (contEsperaSigPreg == 2)
             {
                 tiempoPregunta = false;
                 oldPosArray = -1;
@@ -334,13 +316,10 @@ namespace JuegoQuizzReto {
                 if (comodinObtenido.Cantidad > 0)
                 {
                     comodinObtenido.Cantidad = comodinObtenido.Cantidad - 1;
-                    //Console.WriteLine(posArray);
-                    //Console.WriteLine(arrayComodin[posArray]);
                     arrayComodin[posArray].Cantidad = arrayComodin[posArray].Cantidad - 1;
                     dicInt[arrayComodin[posArray].TipoComodin] = dicInt[arrayComodin[posArray].TipoComodin] + 1;
                     picComodin.Load(@"http://192.168.0.76/gitPaginaReto/P-ginaWeb/" + comodinObtenido.Imagen);
                     picComodin.Visible = true;
-                    //Console.WriteLine("http://192.168.0.76/gitPaginaReto/P-ginaWeb/" + comodinObtenido.Imagen);
                     lblSigPregunta.Text = arrayComodin[posArray].Descripcion;
                     lblComodin.Text = arrayComodin[posArray].TipoComodin;
                     dicPic[arrayComodin[posArray].TipoComodin].Visible = true;
@@ -359,7 +338,6 @@ namespace JuegoQuizzReto {
                 picComodin.Visible = false;
                 lblSigPregunta.Visible = false;
                 lblSigPregunta.Text = "";
-                //picFotoPregunta.Load(@"http://192.168.0.76/gitPaginaReto/P-ginaWeb/" + urlImagen);
                 lblResp1.ForeColor = Color.White;
                 lblResp2.ForeColor = Color.White;
                 lblResp3.ForeColor = Color.White;
@@ -378,7 +356,7 @@ namespace JuegoQuizzReto {
             relojPartida.Stop();
             relojEsperarSigPregunta.Stop();
             partidaActual = new Partida(usuario.Id, puntuacion, numAciertos, DateTime.Today, comodinesGastados, numPreguntaAct, tiempoJugado);
-            new Finalpartida(menuPrincipal, partidaActual);
+            new Finalpartida(menuPrincipal, partidaActual, this);
             this.Dispose();
         }
 
@@ -476,7 +454,6 @@ namespace JuegoQuizzReto {
                         dicLblDic[lblSiguiente].Visible = false;
                         lblSiguiente.Visible = false;
                     }
-                    pos++;
                     ColorLabels();
                     lblExplicacionRespCorrecta.Text = "Explicación: " + todasPreguntas["data"][pos]["descripcion"].ToString();
                     sigPregunta();
@@ -508,25 +485,23 @@ namespace JuegoQuizzReto {
             lblResp3.ForeColor = Color.White;
             lblResp4.ForeColor = Color.White;
             lblActivos = true;
+            try
+            {
+
+            
+           
             Newtonsoft.Json.Linq.JArray arrayPregs = new Newtonsoft.Json.Linq.JArray();
             Newtonsoft.Json.Linq.JToken[] arrayPregsRand;
             for (int i = 1; i < 5; i++)
             {
-                arrayPregs.Add(todasPreguntas["data"][pos]["respuesta" + i]);
+                
+                    arrayPregs.Add(todasPreguntas["data"][pos]["respuesta" + i]);
+                
+                
             }
             arrayPregsRand = arrayPregs.OrderBy(x => rnd.Next()).ToArray();
             lblPregunta.Text = todasPreguntas["data"][pos]["pregunta"].ToString();
-            /*
-            lblResp1.Text = todasPreguntas["data"][pos]["respuesta1"]["respuesta"].ToString();
-            lblResp2.Text = todasPreguntas["data"][pos]["respuesta2"]["respuesta"].ToString();
-            lblResp3.Text = todasPreguntas["data"][pos]["respuesta3"]["respuesta"].ToString();
-            lblResp4.Text = todasPreguntas["data"][pos]["respuesta4"]["respuesta"].ToString();
-
-            lblResp1.Tag = todasPreguntas["data"][pos]["respuesta1"]["correcta"].ToString();
-            lblResp2.Tag = todasPreguntas["data"][pos]["respuesta2"]["correcta"].ToString();
-            lblResp3.Tag = todasPreguntas["data"][pos]["respuesta3"]["correcta"].ToString();
-            lblResp4.Tag = todasPreguntas["data"][pos]["respuesta4"]["correcta"].ToString();
-            */
+            
             lblResp1.Text = arrayPregsRand[0]["respuesta"].ToString();
             lblResp2.Text = arrayPregsRand[1]["respuesta"].ToString();
             lblResp3.Text = arrayPregsRand[2]["respuesta"].ToString();
@@ -538,34 +513,11 @@ namespace JuegoQuizzReto {
             lblResp4.Tag = arrayPregsRand[3]["correcta"].ToString();
 
             urlImagen = todasPreguntas["data"][pos]["imagen"].ToString();
-            /*
-            string[] subsUrl = urlImagen.Split('/');
-
-            subsUrl[0] = subsUrl[0].ToLower();
-
-            StringBuilder strBuild = new StringBuilder();
-
-            for (int i = 0; i < subsUrl.Length; i++)
-            {
-                if (i == subsUrl.Length - 1)
-                {
-                    strBuild.Append(subsUrl[i]);
-                }
-                else 
-                {
-                    strBuild.Append(subsUrl[i] + "/");
-                }
             }
-            
-            urlImagen = strBuild.ToString();
-
-            if (string.IsNullOrEmpty(urlImagen))
+            catch (Exception)
             {
-                urlImagen = "";
+                this.Dispose();
             }
-            */
-            //Console.WriteLine("http://192.168.0.76/gitPaginaReto/P-ginaWeb/" + urlImagen);
-
             try
             {
                 picFotoPregunta.LoadAsync(@"http://192.168.0.76/gitPaginaReto/P-ginaWeb/" + urlImagen);
@@ -574,12 +526,11 @@ namespace JuegoQuizzReto {
             {
                 picFotoPregunta.Image = Properties.Resources.logo_definitivo;
             }
-            
 
             
 
-            contEsperaSigPreg = 10;
-            contPregCor = 10;
+            contEsperaSigPreg = 2;
+            contPregCor = 5;
             relojEsperarSigPregunta.Start();
         }
 
